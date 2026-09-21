@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dkt5o7sibkhem"]
+
+[ext_resource type="Script" uid="uid://b68yikhjvf7ot" path="res://player/smoke.gd" id="1_d11yr"]
+[ext_resource type="Texture2D" uid="uid://bvpevvhiied60" path="res://assets/foxy/smoke/jump_smoke_1.png" id="1_tsmfs"]
+[ext_resource type="Texture2D" uid="uid://dscfmk07sstk8" path="res://assets/foxy/smoke/jump_smoke_2.png" id="2_d11yr"]
+[ext_resource type="Texture2D" uid="uid://dd0sqkm8gqnjg" path="res://assets/foxy/smoke/jump_smoke_3.png" id="3_7bbdj"]
+[ext_resource type="Texture2D" uid="uid://cporyd1i4s10" path="res://assets/foxy/smoke/jump_smoke_4.png" id="4_03lnq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocplc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tsmfs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_d11yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7bbdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_03lnq")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Smoke" type="Node3D" unique_id=480423826]
+script = ExtResource("1_d11yr")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=1055997714]
+offset = Vector2(0, 8)
+pixel_size = 0.1
+billboard = 1
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ocplc")
+
+[connection signal="animation_finished" from="AnimatedSprite3D" to="." method="_on_animated_sprite_3d_animation_finished"]

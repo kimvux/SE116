@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://uwj2ulr8ayl2"]
+
+[ext_resource type="Texture2D" uid="uid://cwgjo8l0lmemi" path="res://assets/foxy/fox/fox_idle_1.png" id="1_bxii4"]
+[ext_resource type="Script" uid="uid://dff7a4lxw1s4h" path="res://player/player.gd" id="1_gnjnj"]
+[ext_resource type="Texture2D" uid="uid://cdiupfoo5xr6u" path="res://assets/foxy/fox/fox_idle_2.png" id="2_gnjnj"]
+[ext_resource type="Texture2D" uid="uid://bunb4hruykt3x" path="res://assets/foxy/fox/fox_jump_1.png" id="3_46wkv"]
+[ext_resource type="Texture2D" uid="uid://dowo3wvh7rdu1" path="res://assets/foxy/fox/fox_jump_2.png" id="4_g5g4i"]
+[ext_resource type="Texture2D" uid="uid://ddf11anrulx6e" path="res://assets/foxy/fox/fox_walk_1.png" id="5_ejoiw"]
+[ext_resource type="Texture2D" uid="uid://bsfb723jv8ohi" path="res://assets/foxy/fox/fox_walk_2.png" id="6_eigp5"]
+[ext_resource type="Texture2D" uid="uid://bj3ls24dmb1u0" path="res://assets/foxy/fox/fox_walk_3.png" id="7_imukw"]
+[ext_resource type="Texture2D" uid="uid://c7b68c2t2m054" path="res://assets/foxy/fox/fox_walk_4.png" id="8_2fbvt"]
+[ext_resource type="AudioStream" uid="uid://irnmtldt0n5y" path="res://assets/sounds/jump.mp3" id="10_46wkv"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocplc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bxii4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gnjnj")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_46wkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g5g4i")
+}],
+"loop": 0,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_ejoiw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_eigp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_imukw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_2fbvt")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gnjnj"]
+
+[node name="Fox" type="CharacterBody3D" unique_id=800459800]
+script = ExtResource("1_gnjnj")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=2075972493]
+offset = Vector2(0, 14)
+pixel_size = 0.0625
+billboard = 1
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ocplc")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1275218087]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.76121044, 0)
+shape = SubResource("CapsuleShape3D_gnjnj")
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=688430744]
+stream = ExtResource("10_46wkv")
+bus = &"SFX"

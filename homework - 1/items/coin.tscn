@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://coxp7fvvrgbk"]
+
+[ext_resource type="Script" uid="uid://jj6iilerupyn" path="res://items/coin.gd" id="1_gnov0"]
+[ext_resource type="Texture2D" uid="uid://d20sbxo5mqjmr" path="res://assets/items/coin/01.png" id="1_omk8p"]
+[ext_resource type="Texture2D" uid="uid://dt8ukgqlm4yx6" path="res://assets/items/coin/02.png" id="2_gnov0"]
+[ext_resource type="Texture2D" uid="uid://ca3uk72ltyi3i" path="res://assets/items/coin/effect/01.png" id="2_hbuv6"]
+[ext_resource type="Texture2D" uid="uid://7815uhsg0yyi" path="res://assets/items/coin/effect/02.png" id="3_236u4"]
+[ext_resource type="Texture2D" uid="uid://csoyxqfkwlg0y" path="res://assets/items/coin/03.png" id="3_w13cl"]
+[ext_resource type="Texture2D" uid="uid://dua5jlj37y4u4" path="res://assets/items/coin/effect/03.png" id="4_ml5uo"]
+[ext_resource type="Texture2D" uid="uid://tbv30al5crco" path="res://assets/items/coin/04.png" id="4_wg8a5"]
+[ext_resource type="AudioStream" uid="uid://w5jqjknju6hu" path="res://assets/sounds/coin.mp3" id="6_w13cl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ocplc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hbuv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_236u4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ml5uo")
+}],
+"loop": 0,
+"name": &"collected",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_omk8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gnov0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w13cl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wg8a5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ocplc"]
+radius = 1.052026
+
+[node name="Coin" type="Area3D" unique_id=1350488249]
+script = ExtResource("1_gnov0")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=2079215365]
+visibility_range_fade_mode = 2
+pixel_size = 0.2
+billboard = 1
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_ocplc")
+autoplay = "default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=698743239]
+shape = SubResource("SphereShape3D_ocplc")
+
+[node name="Coin" type="AudioStreamPlayer" parent="." unique_id=1846202805]
+stream = ExtResource("6_w13cl")
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite3D" to="." method="_on_animated_sprite_3d_animation_finished"]
