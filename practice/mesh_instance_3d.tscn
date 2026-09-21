@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cua8cy7ikhahi"]
+
+[ext_resource type="Texture2D" uid="uid://c8e7ymwei7mp8" path="res://assets/meshes/textures/grass_block.png" id="1_yvhtj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wtj3i"]
+albedo_texture = ExtResource("1_yvhtj")
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_aq2ne"]
+material = SubResource("StandardMaterial3D_wtj3i")
+size = Vector3(2, 2, 2)
+
+[node name="MeshInstance3D" type="MeshInstance3D" unique_id=1304083849]
+mesh = SubResource("BoxMesh_aq2ne")
