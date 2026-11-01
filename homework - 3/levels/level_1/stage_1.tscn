@@ -9,6 +9,18 @@
 [ext_resource type="PackedScene" path="res://scenes/objects/sea_water.tscn" id="6_8s8sm"]
 [ext_resource type="Texture2D" uid="uid://b8hy3ovo63uw6" path="res://assets/sprites/campfire-sheet.png" id="8_juhly"]
 [ext_resource type="PackedScene" uid="uid://b4lo0kcb1anae" path="res://scenes/camera/camera_rig.tscn" id="9_l0tc7"]
+[ext_resource type="PackedScene" uid="uid://ciu8yq1t0wk" path="res://assets/Rig_Medium/Rig_Medium_General.fbx" id="10_7xf2g"]
+[ext_resource type="PackedScene" uid="uid://mobrgr0lov6y" path="res://assets/Full/_archer_tower_LVL_1.fbx" id="11_aov85"]
+[ext_resource type="PackedScene" uid="uid://bmwoum1thqsym" path="res://scenes/objects/skelaton_sword.tscn" id="12_66bjg"]
+[ext_resource type="PackedScene" uid="uid://c0xfk6yi8gdyv" path="res://tests/player_test.tscn" id="13_ptest"]
+[ext_resource type="FontFile" uid="uid://c04qod05v4yn2" path="res://fonts/BeVietnamPro-SemiBold.ttf" id="14_y6x6r"]
+[ext_resource type="PackedScene" uid="uid://bi8exopbrnx6p" path="res://Test.gltf" id="15_wrqy7"]
+[ext_resource type="PackedScene" uid="uid://dy432fcj5mdug" path="res://assets/Full/_Ballista_tower_LVL_1.fbx" id="16_h51gi"]
+[ext_resource type="PackedScene" uid="uid://blqsl0fyb0v1u" path="res://assets/Full/_Ballista_tower_LVL_2.fbx" id="17_h642v"]
+[ext_resource type="PackedScene" uid="uid://cwipk7v41hgu6" path="res://assets/Full/_Ballista_tower_LVL_4.fbx" id="18_aq4x6"]
+[ext_resource type="PackedScene" uid="uid://ds3ais6b7cqoi" path="res://assets/Full/_Ballista_tower_LVL_3.fbx" id="19_jrwcf"]
+[ext_resource type="PackedScene" uid="uid://e4mwtg16cufo" path="res://assets/Rig_unity/cannon_tower_LVL_1_rig.fbx" id="20_aq4x6"]
+[ext_resource type="Texture2D" uid="uid://e7hc5ejkk5u1" path="res://assets/Full/Texture_MAp_fortress_elves.png" id="21_jrwcf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_cpvyx"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -122,6 +134,12 @@ _data = {
 &"fire": SubResource("Animation_l0tc7")
 }
 
+[sub_resource type="LabelSettings" id="LabelSettings_ocplc"]
+font = ExtResource("14_y6x6r")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxmcf"]
+albedo_texture = ExtResource("21_jrwcf")
+
 [node name="Stage1" type="Node3D" unique_id=272812545]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=643404990]
@@ -156,7 +174,12 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Player" parent="." unique_id=1469635990 instance=ExtResource("2_s7lma")]
+process_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.624977, 13.999444, 13.78759)
+
+[node name="PlayerTest" parent="." unique_id=282688640 instance=ExtResource("13_ptest")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.624977, 13.999444, 13.78759)
+visible = false
 
 [node name="PalmTree" parent="." unique_id=2030612100 instance=ExtResource("5_m15xn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.99884, 0.9159465, 16.488152)
@@ -187,7 +210,48 @@ libraries/ = SubResource("AnimationLibrary_7xf2g")
 autoplay = &"fire"
 
 [node name="CameraRig" parent="." unique_id=970641598 node_paths=PackedStringArray("target") instance=ExtResource("9_l0tc7")]
-target = NodePath("../Player")
+target = NodePath("../PlayerTest")
 horizontal_follow_speed = 2.0
 vertical_follow_speed = 2.0
 max_vertical_lag = 2.15
+
+[node name="Rig_Medium_General" parent="." unique_id=1323727150 instance=ExtResource("10_7xf2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.375003, 26.795973, 53.356636)
+
+[node name="_archer_tower_LVL_1" parent="." unique_id=284188163 instance=ExtResource("11_aov85")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.21297, 3.641632, 7.444813)
+
+[node name="skelaton_sword" parent="." unique_id=1233657464 instance=ExtResource("12_66bjg")]
+transform = Transform3D(7.54979e-08, 1, 4.371139e-08, 0, -4.371139e-08, 1, 1, -7.54979e-08, -3.300118e-15, 11.143253, 12.432071, 14.997511)
+
+[node name="Label" type="Label" parent="." unique_id=396695830]
+offset_right = 480.0
+offset_bottom = 261.0
+text = "Chào mừng các bạn "
+label_settings = SubResource("LabelSettings_ocplc")
+
+[node name="blockbench_export" parent="." unique_id=210891684 instance=ExtResource("15_wrqy7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.972652, 0.9999981, 19.79161)
+
+[node name="_Ballista_tower_LVL_1" parent="." unique_id=937590199 instance=ExtResource("16_h51gi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.62725, 1.5177841, 4.5790215)
+
+[node name="_Ballista_tower_LVL_2" parent="." unique_id=1736587772 instance=ExtResource("17_h642v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.422886, 0, 4.0479813)
+
+[node name="_Ballista_tower_LVL_4" parent="." unique_id=2039586385 instance=ExtResource("18_aq4x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.122276, 0, 5.045891)
+
+[node name="_Ballista_tower_LVL_3" parent="." unique_id=585729286 instance=ExtResource("19_jrwcf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.12874, 0, 14.039359)
+
+[node name="cannon_tower_LVL_1_rig" parent="." unique_id=18496676 instance=ExtResource("20_aq4x6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.774254, 0, 11.42086)
+
+[node name="Skeleton3D" parent="cannon_tower_LVL_1_rig/C_tower_1_rig1" parent_id_path=PackedInt32Array(18496676, 724316998) index="0" unique_id=1595161336]
+bones/3/rotation = Quaternion(-0.787107, 0, -0.11, 0.707107)
+
+[node name="Cannon_tower_LVL_1" parent="cannon_tower_LVL_1_rig/C_tower_1_rig1/Skeleton3D" index="0" unique_id=649826876]
+material_override = SubResource("StandardMaterial3D_lxmcf")
+
+[editable path="cannon_tower_LVL_1_rig"]

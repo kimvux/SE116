@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://oiqvoeo7j3gm"]
+
+[ext_resource type="PackedScene" uid="uid://b7i7a3ayouij2" path="res://assets/low_poly_monster.glb" id="1_wlyrp"]
+
+[node name="Tower" type="Node3D" unique_id=903441556]
+
+[node name="Sketchfab_Scene" parent="." unique_id=418785095 instance=ExtResource("1_wlyrp")]

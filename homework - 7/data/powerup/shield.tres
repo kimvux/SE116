@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PowerupDecoratorData" format=3 uid="uid://cxyvatiyuc0f"]
+
+[ext_resource type="Script" uid="uid://cxrs8qrosyse8" path="res://scenes/powerups/shield_decorator.gd" id="1_shield"]
+[ext_resource type="Script" uid="uid://bslulkxbp70v5" path="res://scripts/powerup/powerup_decorator_data.gd" id="2_data"]
+
+[resource]
+script = ExtResource("2_data")
+id = "shield"
+display_name = "Khiên"
+decorator_script = ExtResource("1_shield")
+duration = -1.0
+color_modulate = Color(0.46860927, 0.6934984, 0.45259202, 1)
+metadata/_custom_type_script = "uid://bslulkxbp70v5"

@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4ur7kq7e3vb7"]
+
+[ext_resource type="Texture2D" uid="uid://fgmspntqji81" path="res://assets/low_poly_monster_0.png" id="1_gvhtc"]
+
+[resource]
+resource_name = "main.001"
+cull_mode = 2
+albedo_texture = ExtResource("1_gvhtc")
+roughness = 0.82111454
+metadata/_gltf_primary_texture_coord = 0

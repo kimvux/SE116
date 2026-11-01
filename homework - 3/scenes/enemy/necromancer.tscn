@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bv7md1tlo6tom"]
+
+[ext_resource type="PackedScene" uid="uid://csxci03v0l04y" path="res://assets/KayKit_Skeletons_1.1_EXTRA/characters/gltf/Necromancer.glb" id="1_456p2"]
+
+[node name="Necromancer" unique_id=1368641627 instance=ExtResource("1_456p2")]

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dx6rt3vxndai3"
+path="res://.godot/imported/Skeleton_Golem_Axe_Large.obj-f8327bb2752bed7dede10f42426d8185.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Skeleton_Golem_Axe_Large.obj-f8327bb2752bed7dede10f42426d8185.mesh"]
+
+source_file="res://assets/KayKit_Skeletons_1.1_EXTRA/assets/obj/Skeleton_Golem_Axe_Large.obj"
+dest_files=["res://.godot/imported/Skeleton_Golem_Axe_Large.obj-f8327bb2752bed7dede10f42426d8185.mesh", "res://.godot/imported/Skeleton_Golem_Axe_Large.obj-f8327bb2752bed7dede10f42426d8185.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

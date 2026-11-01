@@ -1,0 +1,16 @@
+if GameManager.is_door_unlocked("stage_2_cleared"):
+	mushroom: Làm vậy là đúng bài 3 chưa anh?
+	mushroom: Chưa đúng thì[pause=0.5] báo em...
+	mushroom: Với cái dialog này em dùng if hơi lỏ nên sẽ khiến mushroom nói sai nếu quay về stage 1 và tương tác.
+	return
+if GameManager.is_door_unlocked("gate"):
+	mushroom: Cửa sang đảo bên kia mở rồi đó. Cáo đi cẩn thận nhé!
+else:
+	mushroom: Chào cáo! Ta là Nấm, người giữ cánh cửa trên bục cao.
+	mushroom: Bên kia cửa là đảo của đàn cua dữ. Cáo có muốn sang đó không?
+	- Có, mở cừa giúp mình!
+		foxy: Mình không sợ cua đâu!
+		do GameManager.unlock_door("gate")
+		mushroom: Lmao! Dũng cảm lắm! Cửa mở rồi đó.
+	- Thôi, để lúc khác
+		mushroom: Khi nào sẵn sàng thì quay lại nhé.

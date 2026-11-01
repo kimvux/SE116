@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c0xfk6yi8gdyv"]
+
+[ext_resource type="Script" uid="uid://drvyurisshqj5" path="res://tests/player_test.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://8hjor1rtmke4" path="res://assets/KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb" id="2_knight"]
+[ext_resource type="AnimationLibrary" uid="uid://5bxmctmn7eh4" path="res://assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_General.glb" id="3_03kx2"]
+[ext_resource type="AnimationLibrary" uid="uid://dxmo0idl2ebjj" path="res://assets/KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb" id="4_krg15"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_test"]
+radius = 0.4
+height = 1.8
+
+[node name="PlayerTest" type="CharacterBody3D" unique_id=1135347032]
+script = ExtResource("1_script")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=700231798]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_test")
+
+[node name="Model" parent="." unique_id=1076193949 instance=ExtResource("2_knight")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Model" unique_id=1836591666]
+libraries/General = ExtResource("3_03kx2")
+libraries/Move = ExtResource("4_krg15")

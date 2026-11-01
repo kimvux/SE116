@@ -1,0 +1,5 @@
+character1: Helle there!
+- choice 1
+	character2: responds to choice 1.
+- choice 2
+	End.

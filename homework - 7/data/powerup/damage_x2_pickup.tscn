@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cwc8aiu811r73"]
+
+[ext_resource type="PackedScene" uid="uid://bk8e5i24j6b02" path="res://levels/objects/pickups/powerup_pickup.tscn" id="1_xs83g"]
+[ext_resource type="Resource" uid="uid://d1gwjv7mxmw5c" path="res://data/powerup/damage_x2.tres" id="2_5mxjp"]
+[ext_resource type="Texture2D" uid="uid://dh6oina0eo6x1" path="res://assets/items/ruby.png" id="3_3e1nk"]
+
+[node name="DamageX2Pickup" unique_id=708046711 instance=ExtResource("1_xs83g")]
+powerup = ExtResource("2_5mxjp")
+
+[node name="Sprite" parent="." index="0" unique_id=1485319500]
+texture = ExtResource("3_3e1nk")

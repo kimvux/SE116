@@ -1,0 +1,6 @@
+if !GameManager.is_door_unlocked("gate"):
+	foxy: Cửa khóa rồi... Chắc phải hỏi Nấm ở làng.
+	return
+if !GameManager.is_door_unlocked("stage_2_cleared"):
+	foxy: Chắc phải tiêu diệt hết cua mới đi đc...
+	return
